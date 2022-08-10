@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { spreadoReduxReducerPack } from 'spreado/for-redux-swr'
 import * as types from './types'
 
 // COUNTER REDUCER
@@ -38,6 +39,7 @@ const timerReducer = (state = initialTimerState, { type, payload }) => {
 const reducers = {
   counter: counterReducer,
   timer: timerReducer,
+  ...spreadoReduxReducerPack,
 }
 
 export default combineReducers(reducers)
